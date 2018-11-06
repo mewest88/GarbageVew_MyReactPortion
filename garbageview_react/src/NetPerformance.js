@@ -6,6 +6,8 @@ let loop = (array) => {
   // for (var i = 0; i < array.length; i++) {
   console.log('array');
   console.log(array);
+  console.log('array np');
+  console.log(array.np);
   for (var np in array){
     console.log('np');
     console.dir(np);

@@ -1,3 +1,8 @@
+This project is just the React/JavaScript portion of the greater GarbageView project being worked on by Zander and myself.
+I spun up a temp server with Node and I am using Socket.io to send over random fake GarbageCollection JSON objects to build out the full front end functionality.
+
+The Node portion will be dropped off and this will be merged with the Spring Boot project Zander has configured. This will link the React front end up to the Java back end that reads the GarbageCollection events off a given project. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
