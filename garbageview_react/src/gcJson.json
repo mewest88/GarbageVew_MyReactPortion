@@ -1,0 +1,10 @@
+[
+{ "gctype":"serial", "gctime":25 },
+{ "gctype":"parallel", "gctime":50 },
+{ "gctype":"g1", "gctime":100 },
+{ "gctype":"serial", "gctime":125 },
+{ "gctype":"parallel", "gctime":150 },
+{ "gctype":"g1", "gctime":10 },
+{ "gctype":"serial", "gctime":20 },
+{ "gctype":"parallel", "gctime":100 }
+]
