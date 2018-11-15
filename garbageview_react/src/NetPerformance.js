@@ -1,44 +1,31 @@
 import React from 'react';
 
-let loop = (array) => {
-  console.log('gets here');
-  var sum = 0
-  // for (var i = 0; i < array.length; i++) {
-  console.log('array');
-  console.log(array);
-  console.log('array np');
-  console.log(array.np);
-  for (var np in array){
-    console.log('np');
-    console.dir(np);
-    for (var i = 0; i < np.length; i++) {
-      console.log('obj');
-      var obj = np[i];
-      console.log(obj);
-      var val = obj[i];
-      sum += val.gctime;
-    // for (var gc in np) 
-    // {
-    //   console.log('gc');
-    //   console.dir(gc);
-    //   console.log(gc.time);
-    //   sum += gc.gctime;
-    //   console.log(sum);
-    // }
-    }
+var getSum = (total, num) => { return total + num; }
+
+const NetPerformance = ({ gcs, addTime }) => {
+
+  var timeArr = []
+  for (var i = 0; i < gcs.length; i++){
+    timeArr.push(gcs[i].gctime)
   }
-  return sum;
-}
-// {"np":[{"gctype":"test1","gctime":25,"id":0}]}
-
-const NetPerformance = (gcs) => { //not destructuring gcs
-  console.log(gcs);
-  var stuff = JSON.stringify(gcs);
-  console.log(stuff);
-  var sum = loop(gcs.np)
-  console.log(sum);
-
-  return sum;
+  timeArr.reduce(getSum, 0)
+  // addTime(timeArr[timeArr.length-1])
+  // console.log('timearr: ', timeArr)
+  return (
+    <div className="gc-perfomance">
+      {timeArr}
+      <span onChange={() => {addTime(timeArr[timeArr.length-1])}}></span>
+      <button onClick={() => {addTime(timeArr[timeArr.length-1])}}>Delete Ninja</button>
+      {() => {addTime(timeArr[timeArr.length-1])}}
+    </div>
+  );
 }
 
 export default NetPerformance;
+
+/*
+ <div className="collection-item" key={gc.id}>
+          <span>{gc.gctime}</span>
+          <span>{timeSum}</span>
+        </div>
+*/
